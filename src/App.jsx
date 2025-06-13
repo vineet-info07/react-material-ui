@@ -1,17 +1,21 @@
-import { Button, Box } from "@mui/material";
+// import { Button, Box } from "@mui/material";
 
-const MySpecialBox = (props) => {
-  return (
-    <Box>
-      label:{props.label} {props.children}
-    </Box>
-  );
-};
+import ThemeComponent from "./components/theme/ThemeComponent";
+import "./App.css";
+
+// const MySpecialBox = (props) => {
+//   return (
+//     <Box>
+//       label:{props.label} {props.children}
+//     </Box>
+//   );
+// };
 function App() {
   return (
-    <div>
-      <h3>Hello World!</h3>
-      <Button
+    <div className="App">
+      <h2>Hey There!</h2>
+      <h3 style={{ color: "red" }}>Hello World!</h3>
+      {/* <Button
         // component="a"
         sx={{ bgcolor: "green" }}
         variant="contained"
@@ -23,7 +27,9 @@ function App() {
 
       <MySpecialBox label="MY BOX">
         <Button variant="contained">My Special Box</Button>
-      </MySpecialBox>
+      </MySpecialBox> */}
+
+      <ThemeComponent />
     </div>
   );
 }
