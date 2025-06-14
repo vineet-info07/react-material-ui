@@ -2,6 +2,7 @@
 
 import ThemeComponent from "./components/theme/ThemeComponent";
 import "./App.css";
+import ButtonComp from "./components/Butttons/Button";
 
 // const MySpecialBox = (props) => {
 //   return (
@@ -29,7 +30,8 @@ function App() {
         <Button variant="contained">My Special Box</Button>
       </MySpecialBox> */}
 
-      <ThemeComponent />
+      {/* <ThemeComponent /> */}
+      <ButtonComp />
     </div>
   );
 }
