@@ -48,7 +48,6 @@ function ButtonComp() {
 
       <Button
         // component="a"
-        sx={{ bgcolor: "green" }}
         disabled
         variant="contained"
         sx={{
