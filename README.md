@@ -22,6 +22,7 @@ If you are developing a production application, we recommend using TypeScript wi
 - Meaningly support any valid css in addition to extra style functionality there regular css can't do.
 - They also integrated with Material UI theme , whether it is default theme or custom theme in ways they makes apply styles throughout your application extremely easy and consistant.
 - It has special shorthand properties which we can use example:
+
   - backgroundColor : bgcolor ,
   - margin: m,
   - marginBottom: mb,
@@ -41,3 +42,34 @@ If you are developing a production application, we recommend using TypeScript wi
   - boxShadow/ dropShadow : 20 -> theme.shadow[20]
   - zIndex: "modal" ->theme.zIndex["modal"]
   - zIndex: (theme) => theme.zIndex["modal"] + 1,
+
+  # Styling Concepts Framework
+
+  # Step 0: Identify what component you want to style
+
+  # Step 1: Use the element inspector to find the specific DOM element containing the style you want to customize
+
+  # Step 2: Identify the class causing the specific style
+
+  # Step 3: Determine whether that class is on the component's root element or nested subcomponent.
+
+  - # Step 3.1:If on a component, check if there's a shortcut with a ComponentProps prop or Component Prop
+
+  <Autocomplete ChipProps={{... }} />
+  <Autocomplete PaperComponent={{... }} />
+
+  # Step 4:if it is on root element then add styles directly in sx prop on that component
+
+  - # Step 4.1 : if it is on nested subcomponent then create a selector targetting that component's class and add styles there
+
+  - # Step 4.2 : If its a state class like disabled, checked, expanded then add that class to the selector
+
+  # Step 5:Make sure your selector follows the ampersand rule
+
+  # TheAmpersand Rule
+
+- If the class on the component itself then no space after the ampersand, if a class is on child element within component then include space
+
+- sx={{"&.Mui-disabled":{...}}} (no space = on element)
+
+- sx={{"& .MuiMenu-Paper":{...}}} (with space = inside element)

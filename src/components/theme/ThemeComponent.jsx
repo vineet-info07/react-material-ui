@@ -49,7 +49,7 @@ function ThemeComponent() {
           borderStyle: "solid",
           borderRadius: "8px",
           boxShadow: 4,
-          bgcolor: { xs: "green", sm: "red" },
+          bgcolor: { xs: "green", sm: "orange-red" },
           // zIndex: "modal",
           zIndex: (theme) => theme.zIndex["modal"] + 1,
           "&:hover": {

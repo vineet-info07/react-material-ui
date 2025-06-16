@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { Button } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Button, buttonClasses } from "@mui/material";
+import { styled, ThemeProvider } from "@mui/material/styles";
 
 // Without using material UI Theme
 // const MyStyledButton = styled(Button)({
@@ -18,6 +18,20 @@ const MyStyledButton = styled(Button)(({ theme }) => ({
   borderRadius: 10,
   padding: 8,
 }));
+
+const CustomButton = styled(Button)(({ theme, ...ownerState }) =>
+  theme.unstable_sx({
+    [`&.${buttonClasses.contained}`]: {
+      bgcolor: "customColors.royalBlue",
+      boxShadow: (theme) => theme.shadows[10],
+      color: ownerState.size === "small" ? "#fff" : "#000",
+      fontSize: "2rem",
+      mb: { xs: 4, sm: 3, md: 2, lg: 1, xl: 0 },
+      "&:hover": { bgcolor: "#343434" },
+      "&.Mui-disabled": { color: "#000" },
+    },
+  })
+);
 
 //By Creating a reusdable component
 const MyReusableButton = (props) => {
@@ -47,6 +61,18 @@ function ButtonComp() {
       </Button>
 
       <Button
+        sx={{
+          color: "customColors.royalBlue",
+          bgcolor: "cyan",
+          boxShadow: (theme) => theme.shadows[15],
+          mb: { xs: 4, sm: 3, md: 2, lg: 1, xl: 0 },
+        }}
+        variant="contained"
+      >
+        Setting custom Theme
+      </Button>
+
+      <Button
         // component="a"
         disabled
         variant="contained"
@@ -61,6 +87,11 @@ function ButtonComp() {
       </Button>
       <MyStyledButton>Styled Button</MyStyledButton>
       <MyReusableButton color="#FFF">Reusable!</MyReusableButton>
+      <CustomButton size="small">Custom Button</CustomButton>
+
+      <Button size="small" variant="outlined" myCustomProp>
+        My New Custom Button
+      </Button>
     </>
   );
 }
