@@ -3,6 +3,7 @@
 import ThemeComponent from "./components/theme/ThemeComponent";
 import "./App.css";
 import ButtonComp from "./components/Butttons/Button";
+import AppLayout from "./components/AppLayout";
 
 // const MySpecialBox = (props) => {
 //   return (
@@ -31,6 +32,7 @@ function App() {
       </MySpecialBox> */}
 
       {/* <ThemeComponent /> */}
+      <AppLayout />
       <ButtonComp />
     </div>
   );
