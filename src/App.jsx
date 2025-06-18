@@ -5,6 +5,7 @@ import "./App.css";
 import ButtonComp from "./components/Butttons/Button";
 import AppLayout from "./components/AppLayout";
 import { Button, Checkbox } from "@mui/material";
+import RadioGroupExample from "./components/RadioGroup/RadioGroupExample";
 
 // const MySpecialBox = (props) => {
 //   return (
@@ -39,7 +40,8 @@ function App() {
     //   <Checkbox color="secondary" />
     // </div>
     <>
-      <ButtonComp />
+      {/* <ButtonComp /> */}
+      <RadioGroupExample />
     </>
   );
 }
